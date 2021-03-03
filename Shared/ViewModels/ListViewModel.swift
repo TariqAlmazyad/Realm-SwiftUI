@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 
+// 11 create TaskCategories to sort tasks based on isCompleted property
 
 enum TaskCategories: String, CaseIterable {
     case all
@@ -24,7 +25,7 @@ enum TaskCategories: String, CaseIterable {
     }
 }
 
-
+// 12 create ListViewModel to handle all logic in List
 final class ListViewModel: ObservableObject {
     @Published var realmRepository           = RealmRepository()
     
@@ -37,6 +38,7 @@ final class ListViewModel: ObservableObject {
     private var anyCancellable               = Set<AnyCancellable>()
     
     init() {
+        // map to allTasks in RealmRepository to get all tasks
         realmRepository.$allTasks
             .receive(on: RunLoop.main)
             .compactMap{
@@ -48,7 +50,7 @@ final class ListViewModel: ObservableObject {
             }
             .assign(to: \.allTasks, on: self)
             .store(in: &anyCancellable)
-        
+        // map to unCompletedTasks in RealmRepository to get unCompletedTasks
         realmRepository.$unCompletedTasks
             .receive(on: RunLoop.main)
             .compactMap{
@@ -60,7 +62,7 @@ final class ListViewModel: ObservableObject {
             }
             .assign(to: \.unCompletedTasks, on: self)
             .store(in: &anyCancellable)
-        
+        // map to completedTasks in RealmRepository to get completedTasks
         realmRepository.$completedTasks
             .receive(on: RunLoop.main)
             .compactMap{
@@ -82,7 +84,10 @@ final class ListViewModel: ObservableObject {
         }
     }
     
-    
+    /* we set selectedTask = nil .
+     Because when we want to create new task , we initialize new one,
+     or we pass an existed one for modification
+     */
      func resetSelectedTask() {
         selectedTask = nil
         realmRepository.loadTasks()

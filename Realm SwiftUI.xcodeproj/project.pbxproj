@@ -17,8 +17,8 @@
 		832B5ECF25EF55F400719031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832B5EA325EF55F400719031 /* Assets.xcassets */; };
 		832B5EE425EF56AC00719031 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 832B5EE325EF56AC00719031 /* Realm */; };
 		832B5EE625EF56AC00719031 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 832B5EE525EF56AC00719031 /* RealmSwift */; };
-		832B5EEC25EF57CA00719031 /* TaskModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B5EEB25EF57CA00719031 /* TaskModel.swift.swift */; };
-		832B5EED25EF57CA00719031 /* TaskModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B5EEB25EF57CA00719031 /* TaskModel.swift.swift */; };
+		832B5EEC25EF57CA00719031 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B5EEB25EF57CA00719031 /* TaskModel.swift */; };
+		832B5EED25EF57CA00719031 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B5EEB25EF57CA00719031 /* TaskModel.swift */; };
 		832B5EF325EF57E000719031 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B5EF225EF57E000719031 /* RealmRepository.swift */; };
 		832B5EF425EF57E000719031 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B5EF225EF57E000719031 /* RealmRepository.swift */; };
 		832B5EFA25EF57F400719031 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B5EF925EF57F400719031 /* ListViewModel.swift */; };
@@ -67,7 +67,7 @@
 		832B5EC325EF55F400719031 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		832B5EC725EF55F400719031 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		832B5EC925EF55F400719031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		832B5EEB25EF57CA00719031 /* TaskModel.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift.swift; sourceTree = "<group>"; };
+		832B5EEB25EF57CA00719031 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		832B5EF225EF57E000719031 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
 		832B5EF925EF57F400719031 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		832B5F0025EF580500719031 /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
@@ -75,6 +75,7 @@
 		836C564D25EFAB9300C08C59 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 		836C565425EFABE500C08C59 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		836C565F25EFAC0500C08C59 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		836C567E25EFE0AA00C08C59 /* Realm SwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Realm SwiftUI.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,7 @@
 		832B5E9B25EF55F200719031 = {
 			isa = PBXGroup;
 			children = (
+				836C567E25EFE0AA00C08C59 /* Realm SwiftUI.entitlements */,
 				832B5EA025EF55F200719031 /* Shared */,
 				832B5EAA25EF55F400719031 /* iOS */,
 				832B5EB125EF55F400719031 /* macOS */,
@@ -186,10 +188,8 @@
 		836C566625EFDD6200C08C59 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				832B5EA225EF55F200719031 /* ListView.swift */,
-				836C564D25EFAB9300C08C59 /* TaskCellView.swift */,
-				832B5F0F25EF5DA000719031 /* AddOrUpdateTaskView.swift */,
-				836C565F25EFAC0500C08C59 /* BottomView.swift */,
+				836C569325EFF59D00C08C59 /* ListView  */,
+				836C569825EFF5AF00C08C59 /* AddOrUpdateTaskView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 		836C566C25EFDDA200C08C59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				832B5EEB25EF57CA00719031 /* TaskModel.swift.swift */,
+				832B5EEB25EF57CA00719031 /* TaskModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +217,24 @@
 				832B5EF225EF57E000719031 /* RealmRepository.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		836C569325EFF59D00C08C59 /* ListView  */ = {
+			isa = PBXGroup;
+			children = (
+				832B5EA225EF55F200719031 /* ListView.swift */,
+				836C564D25EFAB9300C08C59 /* TaskCellView.swift */,
+				836C565F25EFAC0500C08C59 /* BottomView.swift */,
+			);
+			path = "ListView ";
+			sourceTree = "<group>";
+		};
+		836C569825EFF5AF00C08C59 /* AddOrUpdateTaskView */ = {
+			isa = PBXGroup;
+			children = (
+				832B5F0F25EF5DA000719031 /* AddOrUpdateTaskView.swift */,
+			);
+			path = AddOrUpdateTaskView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,7 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				832B5EFA25EF57F400719031 /* ListViewModel.swift in Sources */,
-				832B5EEC25EF57CA00719031 /* TaskModel.swift.swift in Sources */,
+				832B5EEC25EF57CA00719031 /* TaskModel.swift in Sources */,
 				832B5EF325EF57E000719031 /* RealmRepository.swift in Sources */,
 				836C564E25EFAB9300C08C59 /* TaskCellView.swift in Sources */,
 				832B5F1025EF5DA000719031 /* AddOrUpdateTaskView.swift in Sources */,
@@ -401,7 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				832B5EFB25EF57F400719031 /* ListViewModel.swift in Sources */,
-				832B5EED25EF57CA00719031 /* TaskModel.swift.swift in Sources */,
+				832B5EED25EF57CA00719031 /* TaskModel.swift in Sources */,
 				832B5EF425EF57E000719031 /* RealmRepository.swift in Sources */,
 				836C564F25EFAB9300C08C59 /* TaskCellView.swift in Sources */,
 				832B5F1125EF5DA000719031 /* AddOrUpdateTaskView.swift in Sources */,
@@ -561,6 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Realm SwiftUI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGDUJASRTY;
 				ENABLE_PREVIEWS = YES;
@@ -573,6 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TariqAlmazyad.Realm-SwiftUI";
 				PRODUCT_NAME = "Realm SwiftUI";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -583,6 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Realm SwiftUI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGDUJASRTY;
 				ENABLE_PREVIEWS = YES;
@@ -595,6 +616,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TariqAlmazyad.Realm-SwiftUI";
 				PRODUCT_NAME = "Realm SwiftUI";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

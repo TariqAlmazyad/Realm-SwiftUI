@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// 16 create TaskCellView
 struct TaskCellView: View {
     @ObservedObject var listViewModel: ListViewModel
     @ObservedObject var taskCellViewModel: TaskCellViewModel

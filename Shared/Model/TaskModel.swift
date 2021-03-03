@@ -39,8 +39,7 @@ class RealmTaskObject: Object {
     
     override init() {}
     
-    // 3 create an initilizer so that whenever we modify a task, we need to transform it from Realm object to Task object, otherwise Realm will throw error that we can not edit a Realm object
-    /// to pass Task and it returns --> RealmTaskObject to save in RealmDB
+    // 3 create an initializer so that whenever we modify a task, we need to transform it from Realm object to Task object, otherwise Realm will throw error that we can not edit a Realm object
     init(_ task: Task) {
         id = task.id ?? UUID().uuidString // we make the id optional since new tasks do not have IDs
         title = task.title

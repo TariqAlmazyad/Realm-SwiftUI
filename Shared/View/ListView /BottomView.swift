@@ -47,7 +47,6 @@ struct BottomView_Previews: PreviewProvider {
                 .padding()
                 .previewLayout(.sizeThatFits)
             ListView()
-        }
-            .preferredColorScheme(.dark)
+        }.preferredColorScheme(.dark)
     }
 }

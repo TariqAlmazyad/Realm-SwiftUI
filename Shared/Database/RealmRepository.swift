@@ -9,7 +9,7 @@ import RealmSwift
 import Combine
 import SwiftUI
 
-
+// 4 create RealmRepository to manage RealmDB
 final class RealmRepository: ObservableObject {
     // 5 create the necessary properties
     @Published var realm = try! Realm()
@@ -19,11 +19,12 @@ final class RealmRepository: ObservableObject {
     @Published var isDetailViewShowing: Bool = false
     @Published var selectedTask: Task?
     
-    
+    // 6 load all tasks on launch
     init() {
        loadTasks()
     }
     
+    // get all tasks from RealmDB
     func loadTasks(){
         allTasks         = realm.objects(RealmTaskObject.self)
         unCompletedTasks = realm.objects(RealmTaskObject.self).filter("isCompleted = false")
@@ -33,7 +34,7 @@ final class RealmRepository: ObservableObject {
     // 8 create a func to save any new tasks
     /// save new task
     func saveNewTask(_ task: Task){
-        objectWillChange.send()
+        objectWillChange.send() //<- to notify view that the object has changes
         do {
             try realm.write{
                 realm.add(RealmTaskObject(task))
@@ -46,7 +47,7 @@ final class RealmRepository: ObservableObject {
     // 9 create func to update any tasks
     /// to update  selected current task
     func updateTask(_ task: Task){
-        objectWillChange.send()
+        objectWillChange.send() //<- to notify view that the object has changes
         do {
             try realm.write{
                 realm.create(RealmTaskObject.self,
@@ -62,6 +63,7 @@ final class RealmRepository: ObservableObject {
     // 10 create a func to delete any tasks , e.g in ForEach .onDelete(perform: viewModel.deleteTask)
     func deleteTask(at offsets: IndexSet){
         objectWillChange.send()
+        // to get the task from the array
         guard let realmTaskObject = allTasks?.enumerated().first(where: {$0.offset == offsets.first})?.element else { return }
         do {
             try realm.write{

@@ -9,14 +9,15 @@
 import SwiftUI
 import Combine
 
+// 13 create TaskCellViewModel to handle the task that rendered in "" TaskCellView ""
 class TaskCellViewModel: ObservableObject {
     @Published var task: Task
-    @Published var isCompleted: String = ""
-    @Published var title: String = ""
-    @Published var realmRepository           = RealmRepository()
+    @Published var isCompleted: String   = ""
+    @Published var title: String         = ""
+    @Published var realmRepository       = RealmRepository()
     
     private var anyCancellable = Set<AnyCancellable>()
-    
+    // 14 we initialize each single task since we render 1 task in each cell
     init(_ task: Task) {
         self.task = task
         $task

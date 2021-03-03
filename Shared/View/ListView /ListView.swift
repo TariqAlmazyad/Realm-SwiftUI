@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// 15 create ListView
 struct ListView: View {
     @StateObject var listViewModel = ListViewModel()
     var body: some View {
